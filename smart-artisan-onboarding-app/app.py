@@ -7,10 +7,10 @@ sys.path.append(os.path.join(CURRENT_DIR, "models"))
 sys.path.append(os.path.join(CURRENT_DIR, "utils"))
 # -------------------------------------------
 
-from image_model import classify_image
-from translate import translate_to_english
-from whisper_stt import speech_to_text
-from gpt_metadata import generate_listing
+from models.image_model import classify_image
+from utils.translate import translate_to_english
+from utils.whisper_stt import speech_to_text
+from utils.gpt_metadata import generate_listing
 
 st.title("🛍️ Smart Artisan Onboarding App")
 
@@ -29,12 +29,4 @@ if audio_file:
 image = st.file_uploader("📸 Upload product image")
 
 if image:
-    st.image(image, caption="Uploaded Image")
-    category = classify_image(image)
-    st.success(f"Detected Category: {category}")
-
-# Step 3: Generate Product Listing
-if image and audio_file:
-    st.subheader("📄 Auto-Generated Listing Card")
-    card = generate_listing(translated, category)
-    st.write(card)
+    st
