@@ -1,6 +1,4 @@
-from googletrans import Translator
-translator = Translator()
+from deep_translator import GoogleTranslator
 
 def translate_to_english(text):
-    result = translator.translate(text, dest="en")
-    return result.text
+    return GoogleTranslator(source='auto', target='en').translate(text)
